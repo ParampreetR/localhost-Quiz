@@ -1,0 +1,14 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+nav {
+	height: 5vh;
+	min-height: 100px;
+	background-color: #2C279B;
+	text-align: center;
+	font-size: 2em;
+	padding-top: 10px;
+	color: #D6EDA4;
+}

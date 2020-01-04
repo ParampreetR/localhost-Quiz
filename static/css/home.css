@@ -1,0 +1,28 @@
+main {
+	width: 100vw;
+	height: 60vh;
+	background-color: #D6EDA4;
+	text-align: center;
+	padding-top: 20vh;
+}
+
+.caption {
+	font-size: 4em;
+}
+
+.submit {
+	margin-top: 20px;
+	display: inline-block;
+	width: 200px;
+	height: 40px;
+	background-color: #F4FFF1;
+	text-decoration: none;
+	font-weight: bold;
+	border-width: 0px;
+}
+
+.submit:hover {
+	opacity: 0.7;
+	background-color: #2C279B;
+	color: #FFFFFF;
+}
