@@ -1,14 +1,37 @@
 main {
 	width: 100vw;
 	height: 60vh;
-	background-color: #D6EDA4;
+	background-color: rgb(194, 194, 194);
 	text-align: center;
 	padding-top: 20vh;
+	color: rgb(224, 0, 0);
+	cursor: default;
 }
 
 .caption {
 	font-size: 4em;
 }
+
+body {
+	background-color: #2C279B;
+}
+.nameField {
+	margin-top: 10px;
+	border-radius: 1px;
+	height: 30px;
+	width: 400px;
+	border-width: 0px;
+	font-weight: bold;
+	background-color: rgb(163, 161, 189);
+	padding: 2px 10px;
+
+}
+
+input:hover {
+	border-radius: 2px;
+} 
+
+
 
 .submit {
 	margin-top: 20px;

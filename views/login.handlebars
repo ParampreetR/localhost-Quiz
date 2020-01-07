@@ -1,0 +1,11 @@
+<div class="loginForm">
+    <h2 class="loginHeading">Login</h2>
+    <form action="/auth" method="POST">
+        <input type="hidden" value='{{csrf}}' name="csrf">
+        <label for="name">Name:</label>
+        <input type="text" class="formField" name="name" maxlength="20" required><br>
+        <label for="password">Password:</label>
+        <input type="password" class="formField" name="pass" maxlength="20" required><br>
+        <button type="submit">Login</button>
+    </form>
+</div>
