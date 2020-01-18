@@ -1,1 +1,21 @@
-Quiz Page
+<div class="subHead">Questions</div>
+<div class="questionsForm">
+    <form>
+        {{#each quizData}}
+            <div class="question">
+                <p class="question">{{question}}</p>
+                <div class="optionCol">
+                    <span class="option"><span class="opt">{{option1}}</span></span>
+                    <span class="option"><span class="opt">{{option2}}</span></span>
+                </div>
+                <div class="optionCol" id="secondCol">
+                    <span class="option"><span class="opt">{{option3}}</span></span>
+                    <span class="option"><span class="opt">{{option4}}</span></span>
+                    <input type="hidden" value="{{_id}}" class="id">
+                </div>
+            </div>
+        {{/each}}
+    </form>
+</div>
+
+<script src="/javaScript/quiz.js"></script>

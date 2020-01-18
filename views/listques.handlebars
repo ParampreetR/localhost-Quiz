@@ -1,0 +1,21 @@
+<div class="subHead">Questions</div>
+
+<div class="allQuestionsContainer">
+
+    {{#each questions}}
+    <div class="eachContainer">
+        <div class="ques">{{question}}</div> 
+        <ul>
+            <div class="options"><li>{{option1}}</li></div>
+            <div class="options"><li>{{option2}}</li></div>
+            <div class="options"><li>{{option3}}</li></div>
+            <div class="options"><li>{{option4}}</li></div>
+        </ul>
+        <form method="POST">
+            <input type="hidden" value="{{_id}}" name="id">
+            <button type="submit">Delete</button>
+        </form>
+    </div
+    >
+    {{/each}}
+</div>

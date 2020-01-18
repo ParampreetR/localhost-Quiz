@@ -1,0 +1,30 @@
+.subHead {
+    font-size: 2em;
+    text-align: center;
+}
+
+.allQuestionsContainer {
+    height: 50vw;
+    overflow-x: scroll;
+}
+
+.ques {
+    display: inline;
+    font-weight: 800;
+    
+    margin-right: 70vw;
+}
+
+.options {
+    margin-left: 20px;
+}
+
+form {
+    text-align: right;
+    
+}
+
+.eachContainer {
+    background-color: antiquewhite;
+    margin: 2vh 0px;
+}
