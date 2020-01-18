@@ -183,6 +183,7 @@ app.get('/quiz', (req,res) => {
 })
 
 app.post('/quiz', (req, res) => {
+	let resToSend = 'add'
 	let founded = false
 	console.log(req.body)
 	questionSch.find({_id: req.body.id}, (err, data) => {
@@ -197,6 +198,19 @@ app.post('/quiz', (req, res) => {
 						founded = true
 						results[pos + 1] = results[pos + 1] + 1
 						results[pos + 2] = results[pos + 2] + 1
+
+						questionSch.find({}, (err, data) => {
+							if(err){
+								console.log(err)
+							}
+							if(data.length == results[pos + 2]){
+								console.log('condition True')
+								resToSend = 'result'
+								res.send('Results')
+							}
+
+						})
+
 						console.log(results)
 					}
 				}
@@ -218,7 +232,18 @@ app.post('/quiz', (req, res) => {
 						results[pos + 2] = results[pos + 2] + 1
 						console.log(results)
 						founded = true
-						
+
+						questionSch.find({}, (err, data) => {
+							if(err){
+								console.log(err)
+							}
+							console.log(data)
+							if(data.length == results[pos + 2]){
+								console.log('condition True')
+								resToSend = 'result'
+								
+							}
+						})
 					}
 				}
 				if(founded == false)
@@ -228,14 +253,16 @@ app.post('/quiz', (req, res) => {
 						results.push(1)
 					}
 			})
-
+			
 
 			console.log('Wrong')
+			res.send(resToSend)
 		}
 		//console.log(data)
 		//res.render('quiz', { title: name, cssPage: 'quiz.css', quizData: data});
+		
 	})
-	res.send('OK')
+	
 })
 
 app.get('/login', (req, res) => {
@@ -443,7 +470,7 @@ app.get('/remove-cookies', (req, res) => {
 })
 
 app.get('/find-auth-ip', (req, res) => {
-	findIpInAuthIps(1)
+	findIpInAuthIps(req.ip)
 	res.send('Done')
 })
 
@@ -477,6 +504,12 @@ app.get('/find-Database', (req, res) => {
 	delIpInAuthIps(ipQuery)
 	res.send('Request Complete') 
 })
+
+app.use((req, res) => {
+	res.render('')
+})
+
+
 
 const startServer = () => {
 	const server = app.listen(app.get('port'), () => {

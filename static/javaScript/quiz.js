@@ -14,7 +14,11 @@ $(
             success: (res) => {
                 $(evt.target).parent().parent().parent().fadeOut('slow')
                 $('form').fadeOut('slow', () => {
-                $('form').fadeIn('slow')
+                    $('form').fadeIn('slow')
+                    console.log(res)
+                    if(res == 'result'){
+                        window.location.href = '/results'
+                    }
                 })
             }
         })       
