@@ -17,7 +17,7 @@ const mongooseOptions = {
 }
 // Global Variables 
 let operationSuccessful = false
-let results = ['ac', 'ab']
+let results = []
 
 
 
@@ -140,6 +140,13 @@ app.use(cookieParser(cookieKey))
 app.set('view engine', 'handlebars');
 app.set('port', process.env.PORT | 3000);
 
+// 500 Handler
+app.use( (err, req, res, next) => {
+	console.log(err)
+	console.log('ERROR')
+	next();
+})
+
 app.get('/', (req, res) => {
 	if(req.signedCookies.name){
 		res.redirect('/quiz') 	
@@ -256,12 +263,13 @@ app.post('/quiz', (req, res) => {
 			
 
 			console.log('Wrong')
-			res.send(resToSend)
+			
 		}
 		//console.log(data)
 		//res.render('quiz', { title: name, cssPage: 'quiz.css', quizData: data});
 		
 	})
+	res.send('OK')
 	
 })
 
@@ -479,7 +487,7 @@ app.get('/find-auth-ip', (req, res) => {
 
 
 
-
+ 
 
 // Database Checking NEXT 2
 app.get('/show-Database', (req, res) => {
@@ -505,8 +513,11 @@ app.get('/find-Database', (req, res) => {
 	res.send('Request Complete') 
 })
 
+
+// 404 Handler
 app.use((req, res) => {
-	res.render('')
+	res.type('html')
+	res.send('<h1><center>Not Found</center></h1>')
 })
 
 
