@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const handlebars = require('express3-handlebars').create({defaultLayout:'main'});
+const handlebars = require('express-handlebars').create({defaultLayout:'main'});
 const authModule = require('./lib/auth.js')
 const cookieParser = require('cookie-parser')
 const cookieKey = require('./creditails.js').cookieKey
