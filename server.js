@@ -138,7 +138,7 @@ app.use(require('body-parser')() )
 app.use(cookieParser(cookieKey))
 
 app.set('view engine', 'handlebars');
-app.set('port', process.env.PORT | 3000);
+app.set('port', process.env.PORT | 8080);
 
 // 500 Handler
 app.use( (err, req, res, next) => {
