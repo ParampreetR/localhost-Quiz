@@ -138,7 +138,7 @@ app.use(require('body-parser')() )
 app.use(cookieParser(cookieKey))
 
 app.set('view engine', 'handlebars');
-app.set('port', process.env.PORT | 8080);
+const port = process.env.PORT || 8080
 
 // 500 Handler
 app.use( (err, req, res, next) => {
@@ -523,7 +523,7 @@ app.use((req, res) => {
 
 
 const startServer = () => {
-	const server = app.listen(app.get('port'), () => {
+	const server = app.listen(port, () => {
 		console.log(chalk.italic(chalk.bgGray('Server ready at http://localhost:3000/')));
 	});
 }
